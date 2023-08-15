@@ -7,10 +7,11 @@ const app = express();
 
 
 app.use('/', require('./routes/site'));
+app.use('/post', require('./routes/post'));
 
 
 // app.get("/", Home.index);
-app.get("/user", Home.show);
-app.post("/login", Login.store);
+// app.get("/user", Home.show);
+// app.post("/login", Login.store);
 
 app.listen(process.env.PORT || 3000);
