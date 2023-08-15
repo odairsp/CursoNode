@@ -1,5 +1,9 @@
-function index() {
-  return "Home@index";
-}
+const index = function (request, response) {
+  return response.json("Home@index");
+};
 
-module.exports = { index };
+const show = function (request, response) {
+  return response.json("Home@show");
+};
+
+module.exports = { index, show };
