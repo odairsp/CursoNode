@@ -1,11 +1,13 @@
 require("dotenv").config();
 const express = require("express");
-
+const path = require("path");
 const { init: initHandlebars } = require("./helpers/handlebars");
 
 const app = express();
 
 initHandlebars(app);
+
+app.use(express.static(path.join(__dirname, "assets")));
 
 app.use("/", require("./routes/site"));
 app.use("/post", require("./routes/post"));
