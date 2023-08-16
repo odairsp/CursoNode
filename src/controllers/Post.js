@@ -1,10 +1,11 @@
+const { MAIN_DIR } = require("../helpers/constants");
+
 const index = function (request, response) {
-    return response.send("<h1>Post@index</h1>");
-  };
-  
-  const show = function (request, response) {
-    return response.json("Post@show");
-  };
-  
-  module.exports = { index, show }; 
-   
+  return response.render("home", { layout: MAIN_DIR, title: "Post@index" });
+};
+
+const show = function (request, response) {
+  return response.render("home", { layout: MAIN_DIR, title: "Post@show" });
+};
+
+module.exports = { index, show };
