@@ -1,10 +1,9 @@
 const index = function (request, response) {
-  return response.send("<h1>Home@index</h1>");
+  return response.render("home", { layout: MAIN_DIR, title: "Home@index" });
 };
 
 const show = function (request, response) {
-  return response.json("Home@show");
+  return response.render("home", { layout: MAIN_DIR, title: "Home@show" });
 };
 
-module.exports = { index, show }; 
- 
+module.exports = { index, show };
